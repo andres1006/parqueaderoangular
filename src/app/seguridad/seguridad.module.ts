@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SeguridadRoutingModule } from './seguridad-routing.module';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 
 @NgModule({
@@ -10,7 +12,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     CommonModule,
     SeguridadRoutingModule
   ],
-  declarations: [LoginPageComponent],
+  declarations: [LoginPageComponent, ForgotPasswordPageComponent, RegisterPageComponent],
   
 })
 export class SeguridadComponentsModule { }
