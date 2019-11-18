@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
+import {LoginPageServiceService} from '../login-page/login-page-service.service';
 
 @Component({
     selector: 'app-login-page',
@@ -8,23 +9,30 @@ import { Router, ActivatedRoute } from "@angular/router";
     styleUrls: ['./login-page.component.scss']
 })
 
-export class LoginPageComponent {
-
+export class LoginPageComponent implements OnInit{
+/* 
     @ViewChild('f', {static: false}) loginForm: NgForm;
+ */
+    constructor(private loginService: LoginPageServiceService) { }
 
-    constructor(private router: Router,
-        private route: ActivatedRoute) { }
-
-    // On submit button click
-    onSubmit() {
-        this.loginForm.reset();
+    ngOnInit() {
     }
-    // On Forgot password link click
-    onForgotPassword() {
-        this.router.navigate(['forgotpassword'], { relativeTo: this.route.parent });
+  
+    autenticar()
+    {
+      console.log('autenticando');
+      //this.loginService.autenticarService('Carloaiza')
+      
+      
+     this.loginService.obtenerObjetos().subscribe(dataFinal => {
+       console.log(dataFinal);
+       
+      },
+        error => {
+          console.log(error);
+          
+        }); 
+  
     }
-    // On registration link click
-    onRegister() {
-        this.router.navigate(['register'], { relativeTo: this.route.parent });
-    }
+    
 }

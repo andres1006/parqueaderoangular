@@ -6,10 +6,10 @@ import { TareaComponentsRoutingModule } from './tarea-components-routing.module'
 import { EditorComponent } from './editor/editor.component';
 import { QuillModule } from 'ngx-quill';
 
-import { VgCoreModule } from 'videogular2/core';
+/* import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
-import { VgBufferingModule } from 'videogular2/buffering';
+import { VgBufferingModule } from 'videogular2/buffering'; */
 
 
 import { PlayerComponent } from './player/player.component';
@@ -34,8 +34,10 @@ import { AgmCoreModule } from '@agm/core';
   declarations: [EditorComponent, PlayerComponent, CarouselComponent, MapsComponent, FullScreenMapComponent, GoogleMapComponent],
   imports: [
     CommonModule,NgbModule,
-    TareaComponentsRoutingModule, QuillModule, FormsModule, ReactiveFormsModule, VgCoreModule, VgControlsModule,
-    VgOverlayPlayModule, VgBufferingModule, AgmCoreModule.forRoot({
+    TareaComponentsRoutingModule, QuillModule, FormsModule, ReactiveFormsModule, 
+  /*   VgCoreModule, VgControlsModule,
+    VgOverlayPlayModule, VgBufferingModule,  */
+    AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAjHpeZ0A1qF0JmaMPHOiGrhjpkRSMC1zA'
   })
   ]

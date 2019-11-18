@@ -35,20 +35,14 @@
                     <div class="login-btn">
                       <button class="btn btn-outline-primary">
                         <a
-                          [routerLink]="['/pages/register']"
+                          [routerLink]="['/register']"
                           class="text-decoration-none"
                           >Register</a
                         >
                       </button>
                     </div>
                     <div class="recover-pass">
-                      <button class="btn btn-primary">
-                        <a
-                          [routerLink]="['/']"
-                          class="text-decoration-none text-white"
-                          >Login</a
-                        >
-                      </button>
+                      <button (click)="autenticar()">Prueba</button>
                     </div>
                   </div>
                   <hr class="m-0" />

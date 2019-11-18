@@ -8,6 +8,9 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+import { HttpModule } from '@angular/http';
+
+
 import { 
     PerfectScrollbarModule, 
     PERFECT_SCROLLBAR_CONFIG, 
@@ -38,6 +41,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       BrowserAnimationsModule,
       AppRoutingModule,
       SharedModule,
+      HttpModule,
       HttpClientModule,
       NgbModule.forRoot(),
       TranslateModule.forRoot({
