@@ -20,11 +20,17 @@ import { FullScreenMapComponent } from './maps/full-screen-map/full-screen-map.c
 import { GoogleMapComponent } from './maps/google-map/google-map.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
+import { VgOverlayPlayModule } from 'videogular2/overlay-play';
+import { VgBufferingModule } from 'videogular2/buffering';
+
 import { AgmCoreModule } from '@agm/core';
-//import { ChartsComponent } from './charts/charts.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
-/**import { CarouselComponent } from './bootstrap/carousel/carousel.component';*/
+/* import { CarouselComponent } from './bootstrap/carousel/carousel.component'; */
 
 
 
@@ -35,8 +41,8 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     CommonModule,NgbModule,
     TareaComponentsRoutingModule, QuillModule, FormsModule, ReactiveFormsModule, 
-  /*   VgCoreModule, VgControlsModule,
-    VgOverlayPlayModule, VgBufferingModule,  */
+    VgCoreModule, VgControlsModule,
+    VgOverlayPlayModule, VgBufferingModule, 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAjHpeZ0A1qF0JmaMPHOiGrhjpkRSMC1zA'
   })
