@@ -5,10 +5,10 @@
 
 export const environment = {
   production: false,
-  basePath: 'http://localhost:8080/',
+  basePath: 'http://localhost:3000/',
   dataBase: 'parqueadero',
- /*  keyChiperService: 'TUFIFAQTUAAECDZD',
-  ivChipresService: '!QAZxsw2#EDCvfr4' */
+  keyChiperService: 'TUFIFAQTUAAECDZD',
+  ivChipresService: '!QAZxsw2#EDCvfr4'
   
 };
 

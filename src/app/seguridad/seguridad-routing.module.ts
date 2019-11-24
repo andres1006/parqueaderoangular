@@ -5,28 +5,35 @@ import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-passw
 import { RegisterPageComponent } from './register-page/register-page.component';
 
 
+
 const routes: Routes = [
-  { 
-  path: 'login',
-  component: LoginPageComponent,
-  data: {
-    title: 'Login'
+  {
+
+    path: '',
+   
+    children: [
+      {
+        path: 'login',
+        component: LoginPageComponent,
+        data: {
+          title: 'Login'
+        }
+      },
+      {
+        path: 'forgot',
+        component: ForgotPasswordPageComponent,
+        data: {
+          title: 'Forgot Pasword'
+        }
+      }, {
+        path: 'register',
+        component: RegisterPageComponent,
+        data: {
+          title: 'Forgot Pasword'
+        }
+      }
+    ]
   }
-},
-{ 
-  path: 'forgot',
-  component: ForgotPasswordPageComponent,
-  data: {
-    title: 'Forgot Pasword'
-  }
-},
-{ 
-  path: 'register',
-  component: RegisterPageComponent,
-  data: {
-    title: 'Forgot Pasword'
-  }
-},
 ];
 
 @NgModule({

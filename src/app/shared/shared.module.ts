@@ -20,6 +20,7 @@ import { SidebarListDirective } from './directives/sidebarlist.directive';
 import { SidebarAnchorToggleDirective } from './directives/sidebaranchortoggle.directive';
 import { SidebarToggleDirective } from './directives/sidebartoggle.directive';
 
+
 @NgModule({
     exports: [
         CommonModule,
@@ -49,7 +50,8 @@ import { SidebarToggleDirective } from './directives/sidebartoggle.directive';
         SidebarLinkDirective,
         SidebarListDirective,
         SidebarAnchorToggleDirective,
-        SidebarToggleDirective
+        SidebarToggleDirective,
+       
     ]
 })
 export class SharedModule { }

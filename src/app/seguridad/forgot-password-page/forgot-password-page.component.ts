@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
 
@@ -8,12 +8,16 @@ import { Router, ActivatedRoute } from "@angular/router";
     styleUrls: ['./forgot-password-page.component.scss']
 })
 
-export class ForgotPasswordPageComponent {
+export class ForgotPasswordPageComponent /* implements OnInit */ {
+
     @ViewChild('f', {static: false}) forogtPasswordForm: NgForm;
 
     constructor(private router: Router,
         private route: ActivatedRoute) { }
 
+
+   /*      ngOnInit() {
+        } */
     // On submit click, reset form fields
     onSubmit() {
         this.forogtPasswordForm.reset();
