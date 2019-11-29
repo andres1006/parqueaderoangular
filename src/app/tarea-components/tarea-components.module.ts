@@ -15,6 +15,7 @@ import { VgBufferingModule } from 'videogular2/buffering'; */
 import { PlayerComponent } from './player/player.component';
 import { CarouselComponent } from './carousel/carousel.component';
 
+
 import { MapsComponent } from './maps/maps.component';
 import { FullScreenMapComponent } from './maps/full-screen-map/full-screen-map.component';
 import { GoogleMapComponent } from './maps/google-map/google-map.component';
@@ -37,7 +38,8 @@ import { ChartsComponent } from './charts/charts.component';
 
 
 @NgModule({
-  declarations: [EditorComponent, PlayerComponent, CarouselComponent, MapsComponent, FullScreenMapComponent, GoogleMapComponent],
+  declarations: [EditorComponent, PlayerComponent, 
+    CarouselComponent, MapsComponent, FullScreenMapComponent, GoogleMapComponent, ChartsComponent],
   imports: [
     CommonModule,NgbModule,
     TareaComponentsRoutingModule, QuillModule, FormsModule, ReactiveFormsModule, 

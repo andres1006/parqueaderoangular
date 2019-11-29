@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuardGuard } from '../shared/services/guards/login-guard.guard';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
-
 
 
 const routes: Routes = [
   {
 
     path: '',
-   
+    canActivate: [LoginGuardGuard],
     children: [
       {
         path: 'login',

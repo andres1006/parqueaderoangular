@@ -13,6 +13,10 @@ export const Full_ROUTES: Routes = [
   {
     path: 'tarea-components',
     loadChildren: () => import('../../tarea-components/tarea-components.module').then(m => m.TareaComponentsModule)
+  },
+  {
+    path: 'cliente',
+    loadChildren: () => import('../../parqueadero/parqueadero.module').then(m => m.ParqueaderoModule)
   }
   
 ];

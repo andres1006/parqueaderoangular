@@ -33,11 +33,17 @@ export class LoginPageComponent implements OnInit{
         password: userLogin.form.value.password
       }
       this.loginService.validateUser(formLogin.email, formLogin.password).subscribe(dataFinal => {
-        console.log("token  "+ dataFinal.token);
+        console.log("token  "+ dataFinal.token.access_token);
         this.loading = true;
-        if (dataFinal.token) {
-         /*  const tokenCifrado = this.loginService.cifrarToken(dataFinal.token)
-        sessionStorage.setItem(tokenCifrado.nameToken, tokenCifrado.cifrado) */
+        /* if (dataFinal.token) {
+          sessionStorage.setItem(dataFinal.token.access_token , dataFinal.token.access_token)
+         const tokenCifrado = this.loginService.cifrarToken(dataFinal.token)
+         */
+        if (dataFinal.token.access_token) {
+          const tokenCifrado = this.loginService.cifrarToken(dataFinal.token.access_token)
+          sessionStorage.setItem(tokenCifrado.nameToken, tokenCifrado.cifrado)
+  
+         
         //this.router.navigate(['/components/video'])
         this.router.navigate(['full-layout']);
         
@@ -65,6 +71,10 @@ export class LoginPageComponent implements OnInit{
         })
       this.loading = false;
     }
+
+
+    
+
 
   /*   public eje(userLogin: NgForm){
       const formLogin = {

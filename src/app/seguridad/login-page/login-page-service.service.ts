@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 import { environment } from 'environments/environment';
 import { Buffer } from 'buffer';
 import * as CryptoJS from 'crypto-js';
+//import { LoginGuardGuard } from '../../shared/services/guards/login-guard.guard';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 
 
@@ -24,30 +23,22 @@ export class LoginPageServiceService {
     private http: Http,
     public router: Router) { }
 
-  /*   public validateUser(email:String, password:String): Observable<any> { 
-      console.log(email +" "+ password);
-      return 
-
-    } */
+  
 
   //Service
 public validateUser(email:String, password:String): Observable<any> {
       //const url = `${this.urlService.loginValidateUser}${dataLogin.userName}&password=${dataLogin.password}&db=${this.urlService.database}`;
-  const url='http://localhost:3000/signin';
+
+  //const url='http://localhost:3000/signin';
   console.log("metodo validateUser "+email+" "+ password);
 
-  return this.http.post(url, {email,password},
+  return this.http.post(environment.basePath, {email,password},
     {
       headers: this.headersREST()}).pipe(
         map(res => {
           console.log("metodo res "+res);
           return res.json();
         }), pipe(catchError(this.handleError)))
-}
-
-public estasLogueado(){
-  return (sessionStorage.getItem('token'))? true : false;
-
 }
 
 
@@ -60,15 +51,16 @@ public estasLogueado(){
     return myHeaders;
   }
 
- /*  public loginSuccesful(email: string, password: string): Observable<any> {
-    return this.http.post(environment.basePath + 'signin'
-      , { email, password }, { headers: this.headersREST() })
+  public loginSuccesful(email: string, password: string):Observable<any> {
+    return this.http.post(environment.basePath+'/usuario/autenticar'
+      , { email, password },{headers : this.headersREST()})
       .pipe(map(res => {
         return res.json();
       }), pipe(catchError(this.handleError)))
-  } */
+  }
+ 
 
-  /* public cifrarToken(token) {
+   public cifrarToken(token) {
     token = Buffer.from(token).toString('base64')
     this.token = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(token), CryptoJS.enc.Utf8.parse(this.urlService.keyChiperService), {
       keySize: 256,
@@ -97,13 +89,11 @@ public estasLogueado(){
     }
     return response;
   }
- */
 
-
-/* public estaLogueado() {
+  public estaLogueado() {
     const existToken = sessionStorage.getItem('token');
     if (existToken) {
-      const tokenDec = this.cifrarToken(this.token);
+      const tokenDec = this.revelarToken(this.token);
       if (!tokenDec) {
         Swal.fire({
           title: 'Cuidado',
@@ -115,19 +105,16 @@ public estasLogueado(){
       return tokenDec;
     }
     return false;
-  }  */
+  }
 
- /*  public obtenerObjetos(): Observable<any> {
-  //const url = `${this.urlService.loginValidateUser}${dataLogin.userName}&password=${dataLogin.password}&db=${this.urlService.database}`;
-   const url='http://localhost:3000/usuarios'
+  public logout (){
+    sessionStorage.removeItem('token');
+    this.router.navigate(['']);
+  }
 
-    return this.http.get(url,
-     { headers: this.headersREST() }).pipe(
-      map(response => {   
-        return response.json();
-      }), pipe(catchError(this.handleError)))
-  } */
 
+
+  
   // Erros
   private handleError(error: Response) {
     const setError = (error['_body']) ? JSON.parse(error['_body']) : error.statusText;
@@ -139,10 +126,20 @@ public estasLogueado(){
     };
     return Observable.throw(json);
   }
-
-
-
-
+  
+  
+  /*  public obtenerObjetos(): Observable<any> {
+   //const url = `${this.urlService.loginValidateUser}${dataLogin.userName}&password=${dataLogin.password}&db=${this.urlService.database}`;
+    const url='http://localhost:3000/usuarios'
+ 
+     return this.http.get(url,
+      { headers: this.headersREST() }).pipe(
+       map(response => {   
+         return response.json();
+       }), pipe(catchError(this.handleError)))
+   } */
+  
+  
 /*   autenticarService() {
     console.log('Metodo en servicio');
   } */

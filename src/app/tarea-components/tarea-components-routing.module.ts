@@ -4,6 +4,7 @@ import { EditorComponent } from './editor/editor.component';
 import { PlayerComponent } from './player/player.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { MapsComponent } from "./maps/maps.component";
+import { ChartsComponent } from './charts/charts.component';
 
 /**import { CarouselComponent } from './bootstrap/carousel/carousel.component';*/
 
@@ -41,6 +42,13 @@ const routes: Routes = [
     component: MapsComponent,
     data: {
       title: 'Maps'
+    }
+  }, 
+  {
+    path: 'charts',
+    component: ChartsComponent,
+    data: {
+      title: 'Charts'
     }
   }, 
   ]

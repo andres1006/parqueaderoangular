@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { LoginGuardGuard } from './shared/services/guards/login-guard.guard';
 
 import { HttpModule } from '@angular/http';
 
@@ -23,7 +24,7 @@ import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
-import { ChartsComponent } from './tarea-components/charts/charts.component';
+//import { ChartsComponent } from './tarea-components/charts/charts.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -36,12 +37,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 
   @NgModule({
-    declarations: [AppComponent, FullLayoutComponent, ContentLayoutComponent, ChartsComponent],
+    declarations: [AppComponent, FullLayoutComponent, ContentLayoutComponent],
     imports: [
       BrowserAnimationsModule,
       AppRoutingModule,
       SharedModule,
       HttpModule,
+      LoginGuardGuard,
       HttpClientModule,
       NgbModule.forRoot(),
       TranslateModule.forRoot({

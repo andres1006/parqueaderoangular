@@ -5,10 +5,11 @@
 
 export const environment = {
   production: false,
-  basePath: 'http://localhost:3000/',
+  //basePath: 'http://localhost:3000/',
+  basePath: 'https://apiparqueadero2019.herokuapp.com/api/',
   dataBase: 'parqueadero',
-  keyChiperService: 'TUFIFAQTUAAECDZD',
-  ivChipresService: '!QAZxsw2#EDCvfr4'
+  keyChiperService: 'hola',
+  ivChipresService: 'mundo',
   
 };
 
