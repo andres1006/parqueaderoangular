@@ -47,10 +47,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
 
     if (this.config.layout.sidebar.backgroundColor === 'white') {
-      this.logoUrl = 'assets/img/logo-dark.png';
+      this.logoUrl = 'assets/img/gallery/log-blanco.png';
     }
     else {
-      this.logoUrl = 'assets/img/logo.png';
+      this.logoUrl = 'assets/img/gallery/log-blanco.png';
     }
 
 

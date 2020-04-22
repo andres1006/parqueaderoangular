@@ -1,6 +1,6 @@
 // For Registration page
 #regestration {
-    background-image: url("../../../assets/img/gallery/light-bg.jpg");
+    background-image: url("../../../assets/img/gallery/dark-bg.jpg");
     background-size: 100% 100%;
     /assets/img/gallery/light-bg.jpg .register-img {
         background: #f0f0f0;
@@ -20,4 +20,21 @@
             color: #fff !important;
         }
     }
+}
+.button-primary{
+    background-color: #0D1724;
+    margin: 15px;
+}
+
+.button-secundary{
+    background-color:#CB2343;
+    color: white;
+    margin: 15px;
+}
+
+.aLinkButton{
+    color: white;
+}
+.aLink{
+    color: #0D1724;
 }
